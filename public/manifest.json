@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "clip-today-schedules",
+  "description": "A Chrome extension which clips today's schedules from garoon.",
+  "version": "0.0.1",
+  "icons": { "128": "image/icon128.png" },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.cybozu.com/g/*"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["contextMenus", "https://*.cybozu.com/g/*"]
+}
