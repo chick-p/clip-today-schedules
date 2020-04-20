@@ -10,7 +10,8 @@ const getScheduleEvents = async (): Promise<Event[]> => {
   const client = new GaroonClient();
   const rangeStart = encodeURIComponent(today.startOf("day").format());
   const rangeEnd = encodeURIComponent(today.endOf("day").format());
-  const query = `rangeStart=${rangeStart}&rangeEnd=${rangeEnd}`;
+  const orderBy = encodeURIComponent("start asc");
+  const query = `rangeStart=${rangeStart}&rangeEnd=${rangeEnd}&orderBy=${orderBy}`;
   const { events } = await client.getEvents(query);
   return events;
 };
