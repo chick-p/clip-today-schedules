@@ -12,6 +12,7 @@ const addContextMenu = (): void => {
     type: "normal",
     contexts: ["all"],
     onclick: sendClickMessage,
+    documentUrlPatterns: ["*://*.cybozu.com/g/*"],
   });
 };
 
